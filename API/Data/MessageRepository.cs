@@ -58,7 +58,7 @@ namespace API.Data
                 .Include(u => u.Sender).ThenInclude(p => p.Photos)
                 .Include(u => u.Recipient).ThenInclude(p => p.Photos)
                 .Where(
-                    m => m.RecipientUsername == currentUserName && m.RecepientDeleted == false &
+                    m => m.RecipientUsername == currentUserName && m.RecepientDeleted == false &&
                     m.SenderUsername == recepientUserName ||
                     m.RecipientUsername == recepientUserName && m.SenderDeleted == false &&
                     m.SenderUsername == currentUserName
