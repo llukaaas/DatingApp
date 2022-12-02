@@ -45,7 +45,7 @@ namespace API.Controllers
 
             var userRoles = await _userManager.GetRolesAsync(user);
 
-            var result = await _userManager.AddToRolesAsync(user, selectedRoles.Except(userRoles));
+            var result = await _userManager.AddToRolesAsync(user, selectedRoles.Except(userRoles));//pravi razliku izmedju prolsedjenih i selektovanih
 
             if(!result.Succeeded) return BadRequest("Failed to add to roles");
 
