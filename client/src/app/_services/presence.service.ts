@@ -13,7 +13,7 @@ import { User } from '../_models/user';
 export class PresenceService {
   hubUrl = environment.hubUrl;
   private hubConnection?: HubConnection;
-  private onlineUsersSource = new BehaviorSubject<string[]>([]);
+  private onlineUsersSource = new BehaviorSubject<string[]>([]); 
   onlineUsers$ = this.onlineUsersSource.asObservable(); //mozemo da se pretplatimo
 
   constructor(private toastr: ToastrService, private router: Router) { }
